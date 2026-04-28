@@ -83,7 +83,7 @@ def apply_model_function_wrapper(apply_model_executor, x, t, c_concat=None, c_cr
 
     return apply_model_executor(x, timestep, c_concat, c_crossattn, control, transformer_options, **kwargs)
 
-def brushNet_out_sample_wrapper(wrapper_executor, noise, latent_image, sampler, sigmas, denoise_mask=None, callback=None, disable_pbar=False, seed=None):
+def brushNet_out_sample_wrapper(wrapper_executor, noise, latent_image, sampler, sigmas, denoise_mask=None, callback=None, disable_pbar=False, seed=None, **kwargs):
     cfg_guider = wrapper_executor.class_obj
     # set hook
     diffusion_model = cfg_guider.model_patcher.model.diffusion_model
